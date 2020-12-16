@@ -55,7 +55,7 @@ def Read():
 
 
 def test(item) -> bool:
-    if not 1920 <= int(item["byr"]) <= 2020:
+    if not 1920 <= int(item["byr"]) <= 2002:
         return True
 
     if not 2010 <= int(item["iyr"]) <= 2020:
@@ -67,9 +67,11 @@ def test(item) -> bool:
     if item["hgt"].endswith("in"):
         if not (59 <= int(item["hgt"][:-2]) <= 76):
             return True
-    if item["hgt"].endswith("cm"):
+    elif item["hgt"].endswith("cm"):
         if not (150 <= int(item["hgt"][:-2]) <= 193):
             return True
+    else:
+        return True
 
     if not (item["hcl"].startswith("#") and len(item["hcl"]) == 7 and all(c in string.hexdigits for c in item["hcl"][1:])):
         return True
