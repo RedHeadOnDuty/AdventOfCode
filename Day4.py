@@ -55,13 +55,13 @@ def Read():
 
 
 def test(item) -> bool:
-    if not 1920 < int(item["byr"]) < 2020:
+    if not 1920 <= int(item["byr"]) <= 2020:
         return True
 
-    if not 2010 < int(item["iyr"]) < 2020:
+    if not 2010 <= int(item["iyr"]) <= 2020:
         return True
 
-    if not 2020 < int(item["eyr"]) < 2030:
+    if not 2020 <= int(item["eyr"]) <= 2030:
         return True
 
     if item["hgt"].endswith("in"):
