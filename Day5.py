@@ -26,7 +26,7 @@ def MaxID():
     return temp
 
 
-def D5Aufgabe2():
+def YourID():
     tempO = None
     for i in range(0, len(PassengerList)):
         # print(int(PassengerList[i][:-3], 2))
