@@ -36,7 +36,7 @@ def test(cmd):
 def test2():
     i = 0
     while True:
-        cmd = commands
+        cmd = commands.copy()
         if cmd[i] == "acc":
             i += 1
             continue
